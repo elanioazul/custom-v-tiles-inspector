@@ -21,4 +21,4 @@ async function fetchVectorTile(url: string): Promise<void> {
   console.log('Vector source layers found:', Object.keys(tile.layers).join(', '));
 }
 
-fetchVectorTile('http://localhost:8081/geoserver/gwc/service/wmts/rest/htl:geoboundaries_polygons/WebMercatorQuad/8/101/152?&vt-labels=true&vt-label-attributes=elevation&format=application/vnd.mapbox-vector-tile').catch(console.error);
+fetchVectorTile('http://localhost:8081/geoserver/gwc/service/wmts/rest/htl:geoboundaries_polygons/htl:geoboundaries_polygons/WebMercatorQuad/10/381/519?&format=application/vnd.mapbox-vector-tile').catch(console.error);
