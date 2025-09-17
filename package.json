@@ -19,6 +19,7 @@
   "dependencies": {
     "@mapbox/vector-tile": "^2.0.3",
     "node-fetch": "^2.7.0",
-    "pbf": "^4.0.1"
+    "pbf": "^4.0.1",
+    "pmtiles": "^4.3.0"
   }
 }
