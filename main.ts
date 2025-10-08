@@ -3,7 +3,7 @@ import { VectorTile } from '@mapbox/vector-tile';
 import Pbf from 'pbf';
 import * as zlib from 'zlib';
 
-import { PMTiles, Source, RangeResponse, Protocol} from 'pmtiles';
+import { PMTiles, Source, RangeResponse, Protocol, FetchSource} from 'pmtiles';
 
 
 async function fetchVectorTile(url: string): Promise<void> {
@@ -55,10 +55,10 @@ async function fetchVectorTileFromPMTiles(url: string, z: number, x: number, y: 
 
 
 //fetchVectorTile('http://localhost:8081/geoserver/gwc/service/wmts/rest/htl:geoboundaries_polygons/htl:geoboundaries_polygons/WebMercatorQuad/10/381/519?&format=application/vnd.mapbox-vector-tile').catch(console.error);
-
+fetchVectorTile('http://localhost:3001/madrid_2/14/8021/6175').catch(console.error);
 
 //funciona
-fetchVectorTileFromPMTiles('http://localhost:8080/planet.pmtiles', 10, 519, 381).catch(console.error);
+//fetchVectorTileFromPMTiles('http://localhost:8080/planet.pmtiles', 10, 519, 381).catch(console.error);
 //no funciona
 //fetchVectorTileFromPMTiles('http://localhost:8080/mapterhorn_europe.pmtiles', 10, 519, 381).catch(console.error);
 /*
@@ -74,4 +74,5 @@ or was created with an old or non-compliant tool.
 In summary, the problem is with the data in your PMTiles file, not your code. 
 
 ¿será por que debajo son webp en vez de .mvt?
+¿o por qué tengo que hacer la llamada con el protocolo pmtiles como hace maplibre, tipo pmtiles://http://localhost:8080/mapterhorn_europe.pmtiles?
 */
