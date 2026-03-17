@@ -21,7 +21,7 @@ async function fetchVectorTile(url: string): Promise<void> {
   }
 
   const tile = new VectorTile(new Pbf(tileBuffer));
-  console.log('Vector source layers found:', Object.keys(tile.layers).join(', '));
+  console.log('Vector source layers found:\n' + Object.keys(tile.layers).join('\n'));
 }
 
 
@@ -55,7 +55,7 @@ async function fetchVectorTileFromPMTiles(url: string, z: number, x: number, y: 
 
 
 //fetchVectorTile('http://localhost:8081/geoserver/gwc/service/wmts/rest/htl:geoboundaries_polygons/htl:geoboundaries_polygons/WebMercatorQuad/10/381/519?&format=application/vnd.mapbox-vector-tile').catch(console.error);
-fetchVectorTile('http://localhost:3001/madrid_2/14/8021/6175').catch(console.error);
+fetchVectorTile('http://localhost:3001/planetiler-sp-osm/9/249/192').catch(console.error);
 
 //funciona
 //fetchVectorTileFromPMTiles('http://localhost:8080/planet.pmtiles', 10, 519, 381).catch(console.error);
